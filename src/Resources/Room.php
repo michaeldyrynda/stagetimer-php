@@ -18,7 +18,7 @@ class Room extends Resource
         );
     }
 
-    public function logs(string $roomId, ?int $limit = null, ?int $offset = null)
+    public function logs(string $roomId, ?int $limit = null, ?int $offset = null): LogData
     {
         //
     }

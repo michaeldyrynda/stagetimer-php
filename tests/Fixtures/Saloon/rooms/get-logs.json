@@ -1,0 +1,22 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "Date": "Sun, 13 Oct 2024 12:22:55 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "1972",
+    "Connection": "keep-alive",
+    "Access-Control-Allow-Origin": "*",
+    "Vary": "Origin",
+    "Access-Control-Expose-Headers": "X-Payload-T",
+    "ETag": "W/\"7b4-WreKmZ4RC6U5QMZIJJlF2hguPsk\"",
+    "X-UA-Compatible": "IE=Edge",
+    "cf-cache-status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=NUPS2BH8ewjkyoJ8TZ%2BkKtav5IMNvVZ2Oitj5mZSV%2FnaUDCY6xDqnCJ%2BrOQ2W2TGGNrUmDjXq9kT4WAYMe8oELYGB0ZSUzbesmcqmajI4KnYV5FRbWEvDZTFycuOTI08rPQWYDxNppU6TD%2FECyxOSQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Set-Cookie": "__cflb=02DiuJEqaHL8Lr4aYLqTy2sbDgBRdv5kdj2BN3pY8mPLp; SameSite=None; Secure; path=/; expires=Mon, 14-Oct-24 11:22:55 GMT; HttpOnly",
+    "Server": "cloudflare",
+    "CF-RAY": "8d1f4c3fffbbaad7-SYD",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "data": "{\"ok\":true,\"message\":\"Logs loaded\",\"data\":[\"2024-10-13T06:01:58.061Z | michael@example.test | updated the room's name to _the room name_\",\"2024-10-13T06:02:39.647Z | michael@example.test | updated timer _Timer 1_ (`trigger: SCHEDULED`, `startTime: 2024-11-06T22:45:00.000Z`, `startDate: true`)\",\"2024-10-13T06:02:39.732Z | Task Scheduler | scheduled timer _Timer 1_ for `2024-11-06T22:45:00.000Z`\",\"2024-10-13T06:02:51.067Z | michael@example.test | updated timer Timer 1 (`name: Timer 1`, `extra: Michael Dyrynda`)\",\"2024-10-13T06:02:51.159Z | Task Scheduler | scheduled timer _Timer 1_ for `2024-11-06T22:45:00.000Z`\",\"2024-10-13T06:02:53.193Z | michael@example.test | added a timer\",\"2024-10-13T06:03:06.551Z | michael@example.test | updated timer _Timer 1_ (`appearance: COUNTDOWN_TOD`)\",\"2024-10-13T06:03:06.639Z | Task Scheduler | scheduled timer _Timer 1_ for `2024-11-06T22:45:00.000Z`\",\"2024-10-13T06:03:13.629Z | michael@example.test | removed a timer\",\"2024-10-13T06:03:15.445Z | michael@example.test | added a timer\",\"2024-10-13T06:03:28.806Z | michael@example.test | updated timer _Timer 2_ (`startTime: 2024-10-12T23:00:00.000Z`)\",\"2024-10-13T06:03:43.556Z | michael@example.test | updated timer _Timer 2_ (`name: Timer 2`, `extra: Extra Data`)\",\"2024-10-13T06:03:58.697Z | michael@example.test | updated timer _Timer 2_ (`appearance: COUNTDOWN_TOD`, `minutes: 30`)\",\"2024-10-13T06:04:01.251Z | michael@example.test | added a timer\",\"2024-10-13T06:04:09.547Z | michael@example.test | updated timer _Timer 3_ (`startTime: 2024-10-12T23:35:00.000Z`)\",\"2024-10-13T06:04:28.111Z | michael@example.test | updated timer _Timer 3_ (`name: Timer 3`, `extra: Extra Data`)\"]}"
+}

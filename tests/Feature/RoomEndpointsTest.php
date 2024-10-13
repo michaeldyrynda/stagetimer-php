@@ -51,4 +51,18 @@ describe('Room endpoints', function () {
             ->logo->toBe('https://stagetimer.io/assets/logo-dark.png')
             ->timezone->toEqual(CarbonTimeZone::create('Australia/Adelaide'));
     });
+
+    it('can get room logs', function () {
+        MockClient::global([
+            Requests\GetLogs::class => new StagetimerFixture('rooms/get-logs'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        expect($stagetimer->rooms()->logs('theroom'))
+            ->toBeInstanceOf(Data\LogData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Logs loaded')
+            ->data->not->toBeEmpty();
+    });
 });
