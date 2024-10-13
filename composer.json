@@ -1,0 +1,41 @@
+{
+  "name": "dyrynda/stagetimer-php",
+  "description": "A PHP SDK for Stagetimer.io",
+  "type": "library",
+  "require": {
+    "saloonphp/saloon": "^3.10"
+  },
+  "require-dev": {
+    "pestphp/pest": "^3.3",
+    "phpstan/phpstan": "^1.12",
+    "laravel/pint": "^1.18"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Dyrynda\\Stagetimer\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Michael Dyrynda",
+      "email": "michael@dyrynda.com.au"
+    }
+  ],
+  "minimum-stability": "stable",
+  "scripts": { 
+    "test": "vendor/bin/pest",
+    "stan": "vendor/bin/phpstan",
+    "cs": "vendor/bin/pint"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
