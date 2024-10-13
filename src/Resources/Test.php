@@ -17,10 +17,10 @@ final class Test extends Resource
         );
     }
 
-    public function authorization(): Data\AuthorizationData
+    public function authorization(string $roomId): Data\AuthorizationData
     {
         return Data\AuthorizationData::fromArray(
-            $this->connector->send(new Requests\Authorization)->json()
+            $this->connector->send(new Requests\Authorization($roomId))->json()
         );
     }
 }

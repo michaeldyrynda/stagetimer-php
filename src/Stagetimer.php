@@ -18,7 +18,6 @@ class Stagetimer extends Connector
 
     public function __construct(
         #[SensitiveParameter] protected readonly string $key,
-        #[SensitiveParameter] protected readonly string $roomId,
     ) {
         $this->withTokenAuth($this->key);
     }
@@ -31,12 +30,5 @@ class Stagetimer extends Connector
     public function test(): Resources\Test
     {
         return new Resources\Test($this);
-    }
-
-    protected function defaultQuery(): array
-    {
-        return [
-            'room_id' => $this->roomId,
-        ];
     }
 }

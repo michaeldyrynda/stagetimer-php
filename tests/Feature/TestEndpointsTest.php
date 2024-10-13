@@ -18,7 +18,6 @@ describe('General test endpoints', function () {
 
         $stagetimer = new Stagetimer(
             key: 'thekey',
-            roomId: 'theRoomId',
         );
 
         expect($stagetimer->test()->connection())
@@ -34,10 +33,9 @@ describe('General test endpoints', function () {
 
         $stagetimer = new Stagetimer(
             key: 'thekey',
-            roomId: 'theRoomId',
         );
 
-        expect($stagetimer->test()->authorization())
+        expect($stagetimer->test()->authorization(roomId: 'room123'))
             ->toBeInstanceOf(AuthorizationData::class)
             ->ok->toBeTrue()
             ->message->not->toBeEmpty();
