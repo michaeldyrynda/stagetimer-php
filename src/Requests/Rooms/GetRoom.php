@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Dyrynda\Stagetimer\Requests\Room;
+namespace Dyrynda\Stagetimer\Requests\Rooms;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use SensitiveParameter;
 
-final class GetPlaybackStatus extends Request
+final class GetRoom extends Request
 {
     protected Method $method = Method::GET;
 
@@ -18,7 +18,7 @@ final class GetPlaybackStatus extends Request
 
     public function resolveEndpoint(): string
     {
-        return '/get_status';
+        return '/get_room';
     }
 
     protected function defaultQuery(): array

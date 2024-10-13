@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Dyrynda\Stagetimer\Data\Room;
+namespace Dyrynda\Stagetimer\Data\Rooms;
 
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterval;
