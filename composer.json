@@ -3,7 +3,8 @@
   "description": "A PHP SDK for Stagetimer.io",
   "type": "library",
   "require": {
-    "saloonphp/saloon": "^3.10"
+    "saloonphp/saloon": "^3.10",
+    "nesbot/carbon": "^3.8"
   },
   "require-dev": {
     "pestphp/pest": "^3.3",
