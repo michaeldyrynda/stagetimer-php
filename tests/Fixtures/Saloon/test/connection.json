@@ -1,0 +1,22 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Date": "Sun, 13 Oct 2024 10:54:33 GMT",
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "704",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Vary": "Origin",
+        "Access-Control-Expose-Headers": "X-Payload-T",
+        "ETag": "W\/\"2c0-pCyrSLJWy0PgkWQ4nnUkoOQ64q8\"",
+        "X-UA-Compatible": "IE=Edge",
+        "cf-cache-status": "DYNAMIC",
+        "Report-To": "{\"endpoints\":[{\"url\":\"https:\\\/\\\/a.nel.cloudflare.com\\\/report\\\/v4?s=OlTTIeoBJT%2FuYmxSfqFC%2Fl3cU78Me3pdxyq7GyRIpAlQJZlUlTt8fAAvsIc6Y3Ad7g7NqZKxriDDTjC%2BmKhLZlVbK6cnmPm0eEDJIhjv3U%2BHVXn3%2B4pRvGXA%2Br%2F2vTJPrufLFvzr3QSmABiHPQtTXw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "Set-Cookie": "__cflb=02DiuJEqaHL8Lr4aYLqTy2sbDgBRdv5kegGbxkTHeJcr8; SameSite=None; Secure; path=\/; expires=Mon, 14-Oct-24 09:54:33 GMT; HttpOnly",
+        "Server": "cloudflare",
+        "CF-RAY": "8d1ecad04b337e39-SYD",
+        "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "data": "{\"ok\":true,\"message\":\"This is the stagetimer.io Web API v1\",\"data\":{\"docs\":\"https:\/\/stagetimer.io\/docs\/api-v1\/\",\"routes\":[\"\/\",\"\/test_auth\",\"\/get_status\",\"\/get_room\",\"\/get_logs\",\"\/start\",\"\/stop\",\"\/start_or_stop\",\"\/reset\",\"\/next\",\"\/previous\",\"\/add_time\",\"\/subtract_time\",\"\/start_flashing\",\"\/stop_flashing\",\"\/enable_blackout\",\"\/disable_blackout\",\"\/toggle_blackout\",\"\/enable_focus\",\"\/disable_focus\",\"\/toggle_focus\",\"\/start_timer\",\"\/stop_timer\",\"\/start_or_stop_timer\",\"\/reset_timer\",\"\/get_all_timers\",\"\/get_timer\",\"\/create_timer\",\"\/update_timer\",\"\/delete_timer\",\"\/show_message\",\"\/hide_message\",\"\/show_or_hide_message\",\"\/get_all_messages\",\"\/get_message\",\"\/create_message\",\"\/update_message\",\"\/delete_message\"]}}"
+}
