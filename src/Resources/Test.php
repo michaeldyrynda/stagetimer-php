@@ -16,4 +16,11 @@ final class Test extends Resource
             $this->connector->send(new Requests\Connection)->json()
         );
     }
+
+    public function authorization(): Data\AuthorizationData
+    {
+        return Data\AuthorizationData::fromArray(
+            $this->connector->send(new Requests\Authorization)->json()
+        );
+    }
 }

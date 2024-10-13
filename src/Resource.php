@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Dyrynda\Stagetimer;
 
+use Saloon\Exceptions\Request\RequestException;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 
@@ -18,6 +19,12 @@ abstract class Resource
      */
     public function send(Request $request): Response
     {
-        return $this->connector->send($request);
+        $response = $this->connector->send($request);
+
+        if ($response->failed()) {
+            throw new RequestException($response, $response->json('message') ?: 'Unable to complete request', $response->status());
+        }
+
+        return $response;
     }
 }

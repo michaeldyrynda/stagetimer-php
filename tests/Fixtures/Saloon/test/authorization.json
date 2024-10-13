@@ -1,0 +1,22 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "Date": "Sun, 13 Oct 2024 11:22:56 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "87",
+    "Connection": "keep-alive",
+    "Access-Control-Allow-Origin": "*",
+    "Vary": "Origin",
+    "Access-Control-Expose-Headers": "X-Payload-T",
+    "ETag": "W/\"57-xxn7tICM0IRKF99oi91o7wgicMc\"",
+    "X-UA-Compatible": "IE=Edge",
+    "cf-cache-status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=LpD3NJ0FmzYwS0jKh%2F8xpsS8PI9Opqv1%2FCcbkTJIeLVte8eR%2BT87I0LDzIvy8d7a1sV%2Fv6CY6NZkPrIz%2BWowx6%2FxmUjYcEOv%2F1pyqCtzjV%2FI6ypj0%2FzvIzuPCaaHIAw%2FGEM%2FkPTlrCe1ze9eSEmk%2FA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Set-Cookie": "__cflb=02DiuJEqaHL8Lr4aYLqTy2sbDgBRdv5kdYc2SRYrTB4zY; SameSite=None; Secure; path=/; expires=Mon, 14-Oct-24 10:22:56 GMT; HttpOnly",
+    "Server": "cloudflare",
+    "CF-RAY": "8d1ef464fc7c5d35-SYD",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "data": "{\"ok\":true,\"message\":\"You are authorized to use the Stagetimer API for room: REDACTED\"}"
+}
