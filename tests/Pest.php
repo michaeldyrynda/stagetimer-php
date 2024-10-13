@@ -12,10 +12,15 @@
 */
 
 use Saloon\Config;
+use Saloon\Http\Faking\MockClient;
 
 pest()->extend(Tests\TestCase::class)->in('Feature');
 
 Config::preventStrayRequests();
+
+uses()
+    ->beforeEach(fn () => MockClient::destroyGlobal())
+    ->in(__DIR__);
 
 /*
 |--------------------------------------------------------------------------
