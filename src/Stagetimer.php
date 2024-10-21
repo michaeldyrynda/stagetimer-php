@@ -36,4 +36,9 @@ class Stagetimer extends Connector
     {
         return new Resources\Test($this);
     }
+
+    public function timers(): Resources\Timers
+    {
+        return new Resources\Timers($this);
+    }
 }
