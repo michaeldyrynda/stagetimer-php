@@ -22,8 +22,8 @@ class CreateTimer extends Request
 
     protected function defaultQuery(): array
     {
-        return array_merge([
+        return [
             'room_id' => $this->roomId,
-        ], $this->data->toArray());
+        ] + $this->data->toArray();
     }
 }
