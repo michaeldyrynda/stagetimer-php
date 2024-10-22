@@ -1,0 +1,141 @@
+[
+    {
+        "id": "thefirsttimer",
+        "name": "Timer 1",
+        "speaker": "",
+        "notes": "",
+        "labels": [],
+        "appearance": "COUNTDOWN",
+        "type": "DURATION",
+        "duration": "0:10:00",
+        "hours": 0,
+        "minutes": 10,
+        "seconds": 0,
+        "wrapUpYellow": 60,
+        "wrapUpRed": 15,
+        "startTime": "2024-10-22T23:00:01.000000Z",
+        "startTimeUsesDate": false,
+        "finishTime": "2024-10-22T23:00:01.000000Z",
+        "finishTimeUsesDate": false
+    },
+    {
+        "id": "thesecondtimer",
+        "name": "The test timer",
+        "speaker": "Michael Dyrynda",
+        "notes": "these are the notes for the test timer",
+        "labels": [
+            {
+                "name": "Timer label",
+                "color": "#F44336"
+            }
+        ],
+        "appearance": "COUNTDOWN",
+        "type": "FINISH_TIME",
+        "duration": "1:30:15",
+        "hours": 1,
+        "minutes": 30,
+        "seconds": 15,
+        "wrapUpYellow": 900,
+        "wrapUpRed": 300,
+        "startTime": "2024-11-07T09:15:00.000000Z",
+        "startTimeUsesDate": true,
+        "finishTime": "2024-11-07T09:30:00.000000Z",
+        "finishTimeUsesDate": true
+    },
+    {
+        "id": "thethirdtimer",
+        "name": "The test timer",
+        "speaker": "Michael Dyrynda",
+        "notes": "these are the notes for the test timer",
+        "labels": [
+            {
+                "name": "Timer label",
+                "color": "#F44336"
+            }
+        ],
+        "appearance": "COUNTDOWN",
+        "type": "FINISH_TIME",
+        "duration": "1:30:15",
+        "hours": 1,
+        "minutes": 30,
+        "seconds": 15,
+        "wrapUpYellow": 900,
+        "wrapUpRed": 300,
+        "startTime": "2024-11-07T09:15:00.000000Z",
+        "startTimeUsesDate": true,
+        "finishTime": "2024-11-07T09:30:00.000000Z",
+        "finishTimeUsesDate": true
+    },
+    {
+        "id": "thefourthtimer",
+        "name": "The test timer",
+        "speaker": "Michael Dyrynda",
+        "notes": "these are the notes for the test timer",
+        "labels": [
+            {
+                "name": "Timer label",
+                "color": "#F44336"
+            }
+        ],
+        "appearance": "COUNTDOWN",
+        "type": "FINISH_TIME",
+        "duration": "1:30:15",
+        "hours": 1,
+        "minutes": 30,
+        "seconds": 15,
+        "wrapUpYellow": 900,
+        "wrapUpRed": 300,
+        "startTime": "2024-11-07T09:15:00.000000Z",
+        "startTimeUsesDate": true,
+        "finishTime": "2024-11-07T09:30:00.000000Z",
+        "finishTimeUsesDate": true
+    },
+    {
+        "id": "thefifthtimer",
+        "name": "The test timer",
+        "speaker": "Michael Dyrynda",
+        "notes": "these are the notes for the test timer",
+        "labels": [
+            {
+                "name": "Timer label",
+                "color": "#F44336"
+            }
+        ],
+        "appearance": "COUNTDOWN",
+        "type": "FINISH_TIME",
+        "duration": "1:30:15",
+        "hours": 1,
+        "minutes": 30,
+        "seconds": 15,
+        "wrapUpYellow": 900,
+        "wrapUpRed": 300,
+        "startTime": "2024-11-07T09:15:00.000000Z",
+        "startTimeUsesDate": true,
+        "finishTime": "2024-11-07T09:30:00.000000Z",
+        "finishTimeUsesDate": true
+    },
+    {
+        "id": "thesixthtimer",
+        "name": "The updated test timer",
+        "speaker": "Lucas Herrman",
+        "notes": "these notes were updated",
+        "labels": [
+            {
+                "name": "Updated label",
+                "color": "#4CAF50"
+            }
+        ],
+        "appearance": "COUNTDOWN_TOD",
+        "type": "DURATION",
+        "duration": "0:45:30",
+        "hours": 0,
+        "minutes": 45,
+        "seconds": 30,
+        "wrapUpYellow": 600,
+        "wrapUpRed": 300,
+        "startTime": "2024-11-07T10:30:00.000000Z",
+        "startTimeUsesDate": false,
+        "finishTime": "2024-11-07T11:15:30.000000Z",
+        "finishTimeUsesDate": false
+    }
+]

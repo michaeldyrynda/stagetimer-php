@@ -10,6 +10,13 @@ use Dyrynda\Stagetimer\Resource;
 
 final class Timers extends Resource
 {
+    public function all(string $roomId): Data\TimerCollectionData
+    {
+        return Data\TimerCollectionData::fromArray(
+            $this->connector->send(new Requests\GetAllTimers($roomId))->json()
+        );
+    }
+
     public function create(string $roomId, Data\TimerRequestData $data): Data\TimerResponseData
     {
         return Data\TimerResponseData::fromArray(
@@ -17,7 +24,6 @@ final class Timers extends Resource
         );
     }
 
-    {
     public function update(string $roomId, string $timerId, Data\TimerRequestData $data): Data\TimerResponseData
     {
         return Data\TimerResponseData::fromArray(

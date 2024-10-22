@@ -120,7 +120,23 @@ describe('Timer endpoints', function () {
             ->timer->finishTimeUsesDate->toBeFalse();
     });
 
-    it('can get all timers', function () {})->todo();
+    it('can get all timers', function () {
+        Carbon::setTestNow('2024-10-22 23:00:01');
+
+        MockClient::global([
+            Requests\GetAllTimers::class => new StagetimerFixture('timers/all-timers'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        expect($stagetimer->timers()->all(roomId: 'theroomid'))
+            ->toBeInstanceOf(Data\TimerCollectionData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Timers loaded')
+            ->timers->toContainOnlyInstancesOf(Data\TimerData::class)
+            ->timers->toHaveCount(6)
+            ->toMatchSnapshot();
+    });
 
     it('can get a timer', function () {})->todo();
 
