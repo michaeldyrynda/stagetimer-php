@@ -17,4 +17,11 @@ final class Timers extends Resource
             $this->connector->send(new Requests\CreateTimer($roomId, $data))->json()
         );
     }
+
+    public function update(string $roomId, string $timerId, TimerRequestData $data): TimerResponseData
+    {
+        return TimerResponseData::fromArray(
+            $this->connector->send(new Requests\UpdateTimer($roomId, $timerId, $data))->json()
+        );
+    }
 }

@@ -66,7 +66,57 @@ describe('Timer endpoints', function () {
             ->finishTimeUsesDate->toBeTrue();
     });
 
-    it('can update a timer', function () {})->todo();
+    it('can update a timer', function () {
+        MockClient::global([
+            Requests\UpdateTimer::class => new StagetimerFixture('timers/update-timer'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        $data = new Data\TimerRequestData(
+            name: 'The updated test timer',
+            speaker: 'Lucas Herrman',
+            notes: 'these notes were updated',
+            labels: [
+                new Data\LabelData(name: 'Updated label', color: '#4CAF50'),
+            ],
+            appearance: Appearance::CountdownTod,
+            type: Type::Duration,
+            hours: 0,
+            minutes: 45,
+            seconds: 30,
+            wrapUpYellow: 60 * 10,
+            wrapUpRed: 60 * 5,
+            trigger: Trigger::Manual,
+            startTime: CarbonImmutable::parse('2024-11-07 10:30:00'),
+            startTimeUsesDate: false,
+            finishTime: CarbonImmutable::parse('2024-11-07 11:15:30'),
+            finishTimeUsesDate: false,
+        );
+
+        expect($stagetimer->timers()->update(roomId: 'theroomid', timerId: 'thetimerid', data: $data))
+            ->toBeInstanceOf(Data\TimerResponseData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Timer updated')
+            ->timerId->toBe('thetimerid')
+            ->name->toBe('The updated test timer')
+            ->speaker->toBe('Lucas Herrman')
+            ->notes->toBe('these notes were updated')
+            ->labels->{0}->name->toBe('Updated label')
+            ->labels->{0}->color->toBe('#4CAF50')
+            ->appearance->toBe(Appearance::CountdownTod)
+            ->type->toBe(Type::Duration)
+            ->duration->toBe('0:45:30')
+            ->hours->toBe(0)
+            ->minutes->toBe(45)
+            ->seconds->toBe(30)
+            ->wrapUpYellow->toBe(600)
+            ->wrapUpRed->toBe(300)
+            ->startTime->toEqual(Carbon::parse('2024-11-07T10:30:00Z'))
+            ->startTimeUsesDate->toBeFalse()
+            ->finishTime->toEqual(Carbon::parse('2024-11-07T11:15:30'))
+            ->finishTimeUsesDate->toBeFalse();
+    });
 
     it('can get all timers', function () {})->todo();
 

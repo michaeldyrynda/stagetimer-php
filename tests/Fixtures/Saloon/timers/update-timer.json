@@ -1,0 +1,23 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "Date": "Tue, 22 Oct 2024 22:20:24 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "586",
+    "Connection": "keep-alive",
+    "Access-Control-Allow-Origin": "*",
+    "Vary": "Origin",
+    "Access-Control-Expose-Headers": "X-Payload-T",
+    "ETag": "W/\"24a-mjakMktVdzufsUTPy65q8ONdHbk\"",
+    "X-UA-Compatible": "IE=Edge",
+    "cf-cache-status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=9bHfkYxLpAZkD3deX2PiWgZd5Iru5WX6hXZBNWDTfI5p%2BPxq%2B36P8WAbOcgrN%2FYHK1nVmVV3qxEZGczWeEY9aaLqETqKg94%2Fv4JHxxxvojuBaonwWPfHI01uWVvL0HT793dr2dfzgfz04zwHyJ77aA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Set-Cookie": "__cflb=04dToeX6QztRzdMsWhkZxuhAC7z56PTXuBzzVFop1S; SameSite=None; Secure; path=/; expires=Wed, 23-Oct-24 21:20:24 GMT; HttpOnly",
+    "Server": "cloudflare",
+    "CF-RAY": "8d6cdfdb69b95d16-SYD",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "server-timing": "cfL4;desc=\"?proto=TCP&rtt=24960&sent=4&recv=7&lost=0&retrans=0&sent_bytes=2616&recv_bytes=1229&delivery_rate=108845&cwnd=252&unsent_bytes=0&cid=59df9ea093a1d552&ts=613&x=0\""
+  },
+  "data": "{\"ok\":true,\"message\":\"Timer updated\",\"data\":{\"_id\":\"thetimerid\",\"_model\":\"timer\",\"_updated_at\":\"2024-10-22T22:20:24.630Z\",\"name\":\"The updated test timer\",\"speaker\":\"Lucas Herrman\",\"notes\":\"these notes were updated\",\"labels\":[{\"name\":\"Updated label\",\"color\":\"#4CAF50\"}],\"appearance\":\"COUNTDOWN_TOD\",\"type\":\"DURATION\",\"duration\":\"0:45:30\",\"hours\":0,\"minutes\":45,\"seconds\":30,\"wrap_up_yellow\":600,\"wrap_up_red\":300,\"trigger\":\"MANUAL\",\"start_time\":\"2024-11-07T10:30:00.000Z\",\"start_time_uses_date\":false,\"finish_time\":\"2024-11-07T11:15:30.000Z\",\"finish_time_uses_date\":false}}"
+}
