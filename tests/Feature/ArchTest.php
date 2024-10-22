@@ -1,8 +1,8 @@
 <?php
 
 use Dyrynda\Stagetimer\Data;
+use Dyrynda\Stagetimer\Request;
 use Dyrynda\Stagetimer\Resource;
-use Saloon\Http\Request;
 
 arch()
     ->expect('Dyrynda\Stagetimer')

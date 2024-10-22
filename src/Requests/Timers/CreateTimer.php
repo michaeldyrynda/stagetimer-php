@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Dyrynda\Stagetimer\Requests\Timers;
 
 use Dyrynda\Stagetimer\Data\Timers\TimerRequestData;
-use Saloon\Enums\Method;
-use Saloon\Http\Request;
+use Dyrynda\Stagetimer\Request;
 use SensitiveParameter;
 
 class CreateTimer extends Request
 {
-    protected Method $method = Method::GET;
-
     public function __construct(
         #[SensitiveParameter] private string $roomId,
         private TimerRequestData $data,

@@ -4,14 +4,11 @@ declare(strict_types=1);
 
 namespace Dyrynda\Stagetimer\Requests\Rooms;
 
-use Saloon\Enums\Method;
-use Saloon\Http\Request;
+use Dyrynda\Stagetimer\Request;
 use SensitiveParameter;
 
 final class GetLogs extends Request
 {
-    protected Method $method = Method::GET;
-
     public function __construct(
         #[SensitiveParameter] private string $roomId,
         private ?int $limit,
