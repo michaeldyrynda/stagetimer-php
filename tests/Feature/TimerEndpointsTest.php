@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Carbon\Carbon;
 use Carbon\CarbonImmutable;
 use Dyrynda\Stagetimer\Data\Timers as Data;
 use Dyrynda\Stagetimer\Enums\Appearance;
@@ -61,9 +60,9 @@ describe('Timer endpoints', function () {
             ->timer->seconds->toBe(15)
             ->timer->wrapUpYellow->toBe(900)
             ->timer->wrapUpRed->toBe(300)
-            ->timer->startTime->toEqual(Carbon::parse('2024-11-07T09:15:00Z'))
+            ->timer->startTime->toEqual(CarbonImmutable::parse('2024-11-07T09:15:00Z'))
             ->timer->startTimeUsesDate->toBeTrue()
-            ->timer->finishTime->toEqual(Carbon::parse('2024-11-07T10:45:15'))
+            ->timer->finishTime->toEqual(CarbonImmutable::parse('2024-11-07T10:45:15'))
             ->timer->finishTimeUsesDate->toBeTrue();
     });
 
@@ -114,14 +113,14 @@ describe('Timer endpoints', function () {
             ->timer->seconds->toBe(30)
             ->timer->wrapUpYellow->toBe(600)
             ->timer->wrapUpRed->toBe(300)
-            ->timer->startTime->toEqual(Carbon::parse('2024-11-07T10:30:00Z'))
+            ->timer->startTime->toEqual(CarbonImmutable::parse('2024-11-07T10:30:00Z'))
             ->timer->startTimeUsesDate->toBeFalse()
-            ->timer->finishTime->toEqual(Carbon::parse('2024-11-07T11:15:30'))
+            ->timer->finishTime->toEqual(CarbonImmutable::parse('2024-11-07T11:15:30'))
             ->timer->finishTimeUsesDate->toBeFalse();
     });
 
     it('can get all timers', function () {
-        Carbon::setTestNow('2024-10-22 23:00:01');
+        CarbonImmutable::setTestNow('2024-10-22 23:00:01');
 
         MockClient::global([
             Requests\GetAllTimers::class => new StagetimerFixture('timers/all-timers'),
