@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Carbon\CarbonImmutable;
-use Dyrynda\Stagetimer\Data\Timers as Data;
+use Dyrynda\Stagetimer\Data;
 use Dyrynda\Stagetimer\Enums\Appearance;
 use Dyrynda\Stagetimer\Enums\Trigger;
 use Dyrynda\Stagetimer\Enums\Type;
@@ -224,5 +224,16 @@ describe('Timer endpoints', function () {
             ->pause->toEqual(CarbonImmutable::parse('2024-10-25T11:53:02.185000+0000'));
     });
 
-    it('can delete a timer', function () {})->todo();
+    it('can delete a timer', function () {
+        MockClient::global([
+            Requests\DeleteTimer::class => new StagetimerFixture('timers/delete-timer'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'f59b426077cba8082c6111cb46207aae');
+
+        expect($stagetimer->timers()->delete(roomId: 'R4XW612F', timerId: '671634ba3f59e95f03137ef9'))
+            ->toBeInstanceOf(Data\StatusResponseData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Timer deleted');
+    });
 });
