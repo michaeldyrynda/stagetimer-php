@@ -45,6 +45,13 @@ final class Timers extends Resource
         );
     }
 
+    public function toggle(string $roomId, string $timerId): Data\TimerToggleResponseData
+    {
+        return Data\TimerToggleResponseData::fromArray(
+            $this->connector->send(new Requests\ToggleTimer($roomId, $timerId))->json()
+        );
+    }
+
     public function update(string $roomId, string $timerId, Data\TimerRequestData $data): Data\TimerResponseData
     {
         return Data\TimerResponseData::fromArray(
