@@ -153,7 +153,23 @@ describe('Timer endpoints', function () {
             ->timer->name->toBe('The updated test timer');
     });
 
-    it('can start a timer', function () {})->todo();
+    it('can start a timer', function () {
+        MockClient::global([
+            Requests\StartTimer::class => new StagetimerFixture('timers/start-timer'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'key');
+
+        expect($stagetimer->timers()->start(roomId: 'theroomid', timerId: 'thetimerid'))
+            ->toBeInstanceOf(Data\TimerToggleResponseData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Timer started at `0:45:30`')
+            ->timerId->toBe('thetimerid')
+            ->running->toBeTrue()
+            ->start->toEqual(CarbonImmutable::parse('2024-10-25T11:33:50.234000+0000'))
+            ->finish->toEqual(CarbonImmutable::parse('2024-10-25T12:19:20.234000+0000'))
+            ->pause->toEqual(CarbonImmutable::parse('2024-10-25T11:33:50.234000+0000'));
+    });
 
     it('can stop a timer', function () {})->todo();
 
