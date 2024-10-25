@@ -12,6 +12,7 @@ class GetTimer extends Request
     public function __construct(
         #[SensitiveParameter] private string $roomId,
         #[SensitiveParameter] private string $timerId,
+        private ?int $index = null,
     ) {}
 
     public function resolveEndpoint(): string
@@ -21,9 +22,10 @@ class GetTimer extends Request
 
     protected function defaultQuery(): array
     {
-        return [
+        return array_filter([
             'room_id' => $this->roomId,
             'timer_id' => $this->timerId,
-        ];
+            'index' => $this->index,
+        ]);
     }
 }
