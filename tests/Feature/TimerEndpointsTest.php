@@ -164,6 +164,7 @@ describe('Timer endpoints', function () {
             ->ok->toBeTrue()
             ->message->toBe('Timer started at `0:45:30`')
             ->timerId->toBe('thetimerid')
+            ->running->toBeTrue()
             ->start->toEqual(CarbonImmutable::parse('2024-10-25T11:33:50.234000+0000'))
             ->finish->toEqual(CarbonImmutable::parse('2024-10-25T12:19:20.234000+0000'))
             ->pause->toEqual(CarbonImmutable::parse('2024-10-25T11:33:50.234000+0000'));
