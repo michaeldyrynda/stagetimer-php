@@ -138,7 +138,20 @@ describe('Timer endpoints', function () {
             ->toMatchSnapshot();
     });
 
-    it('can get a timer', function () {})->todo();
+    it('can get a timer', function () {
+        MockClient::global([
+            Requests\GetTimer::class => new StagetimerFixture('timers/get-timer'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        expect($stagetimer->timers()->get(roomId: 'theroomid', timerId: 'thetimerid'))
+            ->toBeInstanceOf(Data\TimerResponseData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Timer loaded')
+            ->timer->id->toBe('thetimerid')
+            ->timer->name->toBe('The updated test timer');
+    });
 
     it('can start a timer', function () {})->todo();
 
