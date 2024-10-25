@@ -1,0 +1,23 @@
+{
+    "statusCode": 200,
+    "headers": {
+        "Date": "Fri, 25 Oct 2024 12:01:22 GMT",
+        "Content-Type": "application\/json; charset=utf-8",
+        "Content-Length": "37",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Vary": "Origin",
+        "Access-Control-Expose-Headers": "X-Payload-T",
+        "ETag": "W\/\"25-p2jsXyKCay7AaNJp1hz0mT9h97c\"",
+        "X-UA-Compatible": "IE=Edge",
+        "cf-cache-status": "DYNAMIC",
+        "Report-To": "{\"endpoints\":[{\"url\":\"https:\\\/\\\/a.nel.cloudflare.com\\\/report\\\/v4?s=7m4a1Zn0nSYlb6mG7q0cUEvATPN7Gn6QJdiZFHe4ACBrJt3%2FSssgK8FOqd0FDOMV2DRti%2FCS0hyQpUhbaTKM3J3vNcGhpoTurDsMGq6CtqMcXYUEGBnOg9GWmu2v9G%2B83Pmz4hbDJJhRY4NKq2GM0g%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+        "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+        "Set-Cookie": "__cflb=04dToeX6QztRzdMsWhkZxuhAC7z56PB8MJ3YPYKP8Q; SameSite=None; Secure; path=\/; expires=Sat, 26-Oct-24 11:01:22 GMT; HttpOnly",
+        "Server": "cloudflare",
+        "CF-RAY": "8d820d311bd6a96d-SYD",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "server-timing": "cfL4;desc=\"?proto=TCP&rtt=41254&sent=5&recv=6&lost=0&retrans=0&sent_bytes=2616&recv_bytes=836&delivery_rate=92697&cwnd=58&unsent_bytes=0&cid=8623a06f9aaba0ba&ts=660&x=0\""
+    },
+    "data": "{\"ok\":true,\"message\":\"Timer deleted\"}"
+}
