@@ -20,12 +20,12 @@ describe('Timer endpoints', function () {
 
         $stagetimer = new Stagetimer(key: 'thekey');
 
-        $data = new Data\TimerRequestData(
+        $data = new Data\Timers\TimerRequestData(
             name: 'The test timer',
             speaker: 'Michael Dyrynda',
             notes: 'these are the notes for the test timer',
             labels: [
-                new Data\LabelData(name: 'Timer label', color: '#F44336'),
+                new Data\Timers\LabelData(name: 'Timer label', color: '#F44336'),
             ],
             appearance: Appearance::Countdown,
             type: Type::FinishTime,
@@ -42,10 +42,10 @@ describe('Timer endpoints', function () {
         );
 
         expect($stagetimer->timers()->create(roomId: 'theroom', data: $data))
-            ->toBeInstanceOf(Data\TimerResponseData::class)
+            ->toBeInstanceOf(Data\Timers\TimerResponseData::class)
             ->ok->toBeTrue()
             ->message->toBe('Timer created')
-            ->timer->toBeInstanceOf(Data\TimerData::class)
+            ->timer->toBeInstanceOf(Data\Timers\TimerData::class)
             ->timer->id->toBe('thetimerid')
             ->timer->name->toBe('The test timer')
             ->timer->speaker->toBe('Michael Dyrynda')
@@ -73,12 +73,12 @@ describe('Timer endpoints', function () {
 
         $stagetimer = new Stagetimer(key: 'thekey');
 
-        $data = new Data\TimerRequestData(
+        $data = new Data\Timers\TimerRequestData(
             name: 'The updated test timer',
             speaker: 'Lucas Herrman',
             notes: 'these notes were updated',
             labels: [
-                new Data\LabelData(name: 'Updated label', color: '#4CAF50'),
+                new Data\Timers\LabelData(name: 'Updated label', color: '#4CAF50'),
             ],
             appearance: Appearance::CountdownTod,
             type: Type::Duration,
@@ -95,10 +95,10 @@ describe('Timer endpoints', function () {
         );
 
         expect($stagetimer->timers()->update(roomId: 'theroomid', timerId: 'thetimerid', data: $data))
-            ->toBeInstanceOf(Data\TimerResponseData::class)
+            ->toBeInstanceOf(Data\Timers\TimerResponseData::class)
             ->ok->toBeTrue()
             ->message->toBe('Timer updated')
-            ->timer->toBeInstanceOf(Data\TimerData::class)
+            ->timer->toBeInstanceOf(Data\Timers\TimerData::class)
             ->timer->id->toBe('thetimerid')
             ->timer->name->toBe('The updated test timer')
             ->timer->speaker->toBe('Lucas Herrman')
@@ -129,10 +129,10 @@ describe('Timer endpoints', function () {
         $stagetimer = new Stagetimer(key: 'thekey');
 
         expect($stagetimer->timers()->all(roomId: 'theroomid'))
-            ->toBeInstanceOf(Data\TimerCollectionData::class)
+            ->toBeInstanceOf(Data\Timers\TimerCollectionData::class)
             ->ok->toBeTrue()
             ->message->toBe('Timers loaded')
-            ->timers->toContainOnlyInstancesOf(Data\TimerData::class)
+            ->timers->toContainOnlyInstancesOf(Data\Timers\TimerData::class)
             ->timers->toHaveCount(6)
             ->toMatchSnapshot();
     });
@@ -145,7 +145,7 @@ describe('Timer endpoints', function () {
         $stagetimer = new Stagetimer(key: 'thekey');
 
         expect($stagetimer->timers()->get(roomId: 'theroomid', timerId: 'thetimerid'))
-            ->toBeInstanceOf(Data\TimerResponseData::class)
+            ->toBeInstanceOf(Data\Timers\TimerResponseData::class)
             ->ok->toBeTrue()
             ->message->toBe('Timer loaded')
             ->timer->id->toBe('thetimerid')
@@ -160,7 +160,7 @@ describe('Timer endpoints', function () {
         $stagetimer = new Stagetimer(key: 'key');
 
         expect($stagetimer->timers()->start(roomId: 'theroomid', timerId: 'thetimerid'))
-            ->toBeInstanceOf(Data\TimerToggleResponseData::class)
+            ->toBeInstanceOf(Data\Timers\TimerToggleResponseData::class)
             ->ok->toBeTrue()
             ->message->toBe('Timer started at `0:45:30`')
             ->timerId->toBe('thetimerid')
@@ -178,7 +178,7 @@ describe('Timer endpoints', function () {
         $stagetimer = new Stagetimer(key: 'thekey');
 
         expect($stagetimer->timers()->stop(roomId: 'theroomid', timerId: 'thetimerid'))
-            ->toBeInstanceOf(Data\TimerToggleResponseData::class)
+            ->toBeInstanceOf(Data\Timers\TimerToggleResponseData::class)
             ->ok->toBeTrue()
             ->message->toBe('Timer stopped at `0:34:03`')
             ->timerId->toBe('thetimerid')
@@ -196,7 +196,7 @@ describe('Timer endpoints', function () {
         $stagetimer = new Stagetimer(key: 'thekey');
 
         expect($stagetimer->timers()->toggle(roomId: 'theroomid', timerId: 'thetimerid'))
-            ->toBeInstanceOf(Data\TimerToggleResponseData::class)
+            ->toBeInstanceOf(Data\Timers\TimerToggleResponseData::class)
             ->ok->toBeTrue()
             ->message->toBe('Timer started at `0:34:03`')
             ->timerId->toBe('thetimerid')
@@ -214,7 +214,7 @@ describe('Timer endpoints', function () {
         $stagetimer = new Stagetimer(key: 'thekey');
 
         expect($stagetimer->timers()->reset(roomId: 'theroomid', timerId: 'thetimerid'))
-            ->toBeInstanceOf(Data\TimerToggleResponseData::class)
+            ->toBeInstanceOf(Data\Timers\TimerToggleResponseData::class)
             ->ok->toBeTrue()
             ->message->toBe('Timer reset to `0:45:30`')
             ->timerId->toBe('thetimerid')
