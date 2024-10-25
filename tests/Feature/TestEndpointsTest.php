@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
+use Dyrynda\Stagetimer\Data\StatusResponseData;
 use Dyrynda\Stagetimer\Data\Test\AuthorizationData;
-use Dyrynda\Stagetimer\Data\Test\ConnectionData;
 use Dyrynda\Stagetimer\Requests\Test\Authorization;
 use Dyrynda\Stagetimer\Requests\Test\Connection;
 use Dyrynda\Stagetimer\Stagetimer;
@@ -21,7 +21,7 @@ describe('General test endpoints', function () {
         );
 
         expect($stagetimer->test()->connection())
-            ->toBeInstanceOf(ConnectionData::class)
+            ->toBeInstanceOf(StatusResponseData::class)
             ->ok->toBeTrue()
             ->message->not->toBeEmpty();
     });
