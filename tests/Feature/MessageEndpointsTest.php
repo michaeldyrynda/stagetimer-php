@@ -38,7 +38,32 @@ describe('Message endpoints', function () {
             ->data->uppercase->toBeTrue();
     });
 
-    it('can update a message', function () {})->todo();
+    it('can update a message', function () {
+        MockClient::global([
+            Requests\UpdateMessage::class => new StagetimerFixture('messages/update-message'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        $data = new Data\Messages\MessageRequestData(
+            text: 'The message was updated',
+            color: Enums\Color::White,
+            bold: false,
+            uppercase: false,
+        );
+
+        expect($stagetimer->messages()->update(roomId: 'theroomid', messageId: 'themssageid', data: $data))
+            ->toBeInstanceOf(Data\Messages\MessageResponseData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Message updated')
+            ->data->id->toBe('themessageid')
+            ->data->updatedAt->toEqual(CarbonImmutable::parse('2024-10-26T05:07:01.951000+0000'))
+            ->data->showing->toBeFalse()
+            ->data->text->toBe('The message was updated')
+            ->data->color->toBe(Enums\Color::White)
+            ->data->bold->toBeFalse()
+            ->data->uppercase->toBeFalse();
+    });
 
     it('can show a message', function () {})->todo();
 

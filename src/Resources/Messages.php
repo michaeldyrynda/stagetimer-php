@@ -16,4 +16,14 @@ class Messages extends Resource
             $this->connector->send(new Requests\CreateMessage($roomId, $data))->json()
         );
     }
+
+    public function update(
+        string $roomId,
+        string $messageId,
+        Data\Messages\MessageRequestData $data,
+    ): Data\Messages\MessageResponseData {
+        return Data\Messages\MessageResponseData::fromArray(
+            $this->connector->send(new Requests\UpdateMessage($roomId, $messageId, $data))->json()
+        );
+    }
 }
