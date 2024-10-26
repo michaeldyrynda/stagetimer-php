@@ -113,7 +113,21 @@ describe('Message endpoints', function () {
             ->data->showing->toBeTrue();
     });
 
-    it('can get all message', function () {})->todo();
+    it('can get all message', function () {
+        MockClient::global([
+            Requests\GetAllMessages::class => new StagetimerFixture('messages/all-messages'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        expect($stagetimer->messages()->getAll(roomId: 'theroomid'))
+            ->toBeInstanceOf(Data\Messages\MessageCollectionData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Messages loaded')
+            ->messages->toContainOnlyInstancesOf(Data\Messages\MessageData::class)
+            ->messages->toHaveCount(3)
+            ->toMatchSnapshot();
+    });
 
     it('can get a message', function () {})->todo();
 

@@ -17,6 +17,13 @@ class Messages extends Resource
         );
     }
 
+    public function getAll(string $roomId): Data\Messages\MessageCollectionData
+    {
+        return Data\Messages\MessageCollectionData::fromArray(
+            $this->connector->send(new Requests\GetAllMessages($roomId))->json()
+        );
+    }
+
     public function hide(string $roomId, string $messageId, ?int $index = null): Data\Messages\MessageResponseData
     {
         return Data\Messages\MessageResponseData::fromArray(

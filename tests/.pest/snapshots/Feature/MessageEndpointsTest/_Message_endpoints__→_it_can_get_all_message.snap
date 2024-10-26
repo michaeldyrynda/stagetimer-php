@@ -1,0 +1,29 @@
+[
+    {
+        "id": "thefirstmessage",
+        "updatedAt": "2024-10-21T09:45:35.853000Z",
+        "showing": false,
+        "text": "",
+        "color": "white",
+        "bold": false,
+        "uppercase": false
+    },
+    {
+        "id": "thesecondmessage",
+        "updatedAt": "2024-10-26T04:46:01.646000Z",
+        "showing": false,
+        "text": "This is a message",
+        "color": "green",
+        "bold": true,
+        "uppercase": true
+    },
+    {
+        "id": "thethirdmessage",
+        "updatedAt": "2024-10-26T05:07:01.951000Z",
+        "showing": true,
+        "text": "The message was updated",
+        "color": "white",
+        "bold": false,
+        "uppercase": false
+    }
+]
