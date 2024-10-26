@@ -65,7 +65,21 @@ describe('Message endpoints', function () {
             ->data->uppercase->toBeFalse();
     });
 
-    it('can show a message', function () {})->todo();
+    it('can show a message', function () {
+        MockClient::global([
+            Requests\ShowMessage::class => new StagetimerFixture('messages/show-message'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        expect($stagetimer->messages()->show(roomId: 'theroomid', messageId: 'themessageid'))
+            ->toBeInstanceOf(Data\Messages\MessageResponseData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Message showing')
+            ->data->id->toBe('themessageid')
+            ->data->updatedAt->toEqual(CarbonImmutable::parse('2024-10-26T05:07:01.951000+0000'))
+            ->data->showing->toBeTrue();
+    });
 
     it('can hide a message', function () {})->todo();
 
