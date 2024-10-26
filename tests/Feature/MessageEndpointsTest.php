@@ -129,7 +129,19 @@ describe('Message endpoints', function () {
             ->toMatchSnapshot();
     });
 
-    it('can get a message', function () {})->todo();
+    it('can get a message', function () {
+        MockClient::global([
+            Requests\GetMessage::class => new StagetimerFixture('messages/get-message'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        expect($stagetimer->messages()->get(roomId: 'theroomid', messageId: 'themessageid'))
+            ->toBeInstanceOf(Data\Messages\MessageResponseData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Message loaded')
+            ->data->id->toBe('themessageid');
+    });
 
     it('can delete a message', function () {})->todo();
 });
