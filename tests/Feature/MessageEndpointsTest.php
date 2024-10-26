@@ -143,5 +143,16 @@ describe('Message endpoints', function () {
             ->data->id->toBe('themessageid');
     });
 
-    it('can delete a message', function () {})->todo();
+    it('can delete a message', function () {
+        MockClient::global([
+            Requests\DeleteMessage::class => new StagetimerFixture('messages/delete-message'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        expect($stagetimer->messages()->delete(roomId: 'theroomid', messageId: 'themessageid'))
+            ->toBeInstanceOf(Data\StatusResponseData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Message deleted');
+    });
 });

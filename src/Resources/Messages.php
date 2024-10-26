@@ -17,6 +17,13 @@ class Messages extends Resource
         );
     }
 
+    public function delete(string $roomId, string $messageId, ?int $index = null): Data\StatusResponseData
+    {
+        return Data\StatusResponseData::fromArray(
+            $this->connector->send(new Requests\DeleteMessage($roomId, $messageId, $index))->json()
+        );
+    }
+
     public function get(string $roomId, string $messageId, ?int $index = null): Data\Messages\MessageResponseData
     {
         return Data\Messages\MessageResponseData::fromArray(
