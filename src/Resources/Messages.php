@@ -31,6 +31,13 @@ class Messages extends Resource
         );
     }
 
+    public function toggle(string $roomId, string $messageId, ?int $index = null): Data\Messages\MessageResponseData
+    {
+        return Data\Messages\MessageResponseData::fromArray(
+            $this->connector->send(new Requests\ToggleMessage($roomId, $messageId, $index))->json()
+        );
+    }
+
     public function update(
         string $roomId,
         string $messageId,

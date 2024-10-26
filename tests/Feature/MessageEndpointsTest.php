@@ -97,7 +97,21 @@ describe('Message endpoints', function () {
             ->data->showing->toBeFalse();
     });
 
-    it('can toggle a message', function () {})->todo();
+    it('can toggle a message', function () {
+        MockClient::global([
+            Requests\ToggleMessage::class => new StagetimerFixture('messages/toggle-message'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        expect($stagetimer->messages()->toggle(roomId: 'theroomid', messageId: 'themessageid'))
+            ->toBeInstanceOf(Data\Messages\MessageResponseData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Message showing')
+            ->data->id->toBe('themessageid')
+            ->data->updatedAt->toEqual(CarbonImmutable::parse('2024-10-26T05:07:01.951000+0000'))
+            ->data->showing->toBeTrue();
+    });
 
     it('can get all message', function () {})->todo();
 
