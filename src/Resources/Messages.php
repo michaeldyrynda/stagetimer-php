@@ -17,6 +17,13 @@ class Messages extends Resource
         );
     }
 
+    public function hide(string $roomId, string $messageId, ?int $index = null): Data\Messages\MessageResponseData
+    {
+        return Data\Messages\MessageResponseData::fromArray(
+            $this->connector->send(new Requests\HideMessage($roomId, $messageId, $index))->json()
+        );
+    }
+
     public function show(string $roomId, string $messageId, ?int $index = null): Data\Messages\MessageResponseData
     {
         return Data\Messages\MessageResponseData::fromArray(

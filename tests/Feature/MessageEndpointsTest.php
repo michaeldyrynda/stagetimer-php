@@ -81,7 +81,21 @@ describe('Message endpoints', function () {
             ->data->showing->toBeTrue();
     });
 
-    it('can hide a message', function () {})->todo();
+    it('can hide a message', function () {
+        MockClient::global([
+            Requests\HideMessage::class => new StagetimerFixture('messages/hide-message'),
+        ]);
+
+        $stagetimer = new Stagetimer(key: 'thekey');
+
+        expect($stagetimer->messages()->hide(roomId: 'theroomid', messageId: 'themessageid'))
+            ->toBeInstanceOf(Data\Messages\MessageResponseData::class)
+            ->ok->toBeTrue()
+            ->message->toBe('Message hidden')
+            ->data->id->toBe('themessageid')
+            ->data->updatedAt->toEqual(CarbonImmutable::parse('2024-10-26T05:07:01.951000+0000'))
+            ->data->showing->toBeFalse();
+    });
 
     it('can toggle a message', function () {})->todo();
 
