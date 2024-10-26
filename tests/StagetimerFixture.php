@@ -12,6 +12,7 @@ class StagetimerFixture extends Fixture
     {
         return [
             'Authorization' => 'Bearer: REDACTED',
+            '_id' => 'REDACTED',
         ];
     }
 }

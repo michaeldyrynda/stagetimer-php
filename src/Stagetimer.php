@@ -27,6 +27,11 @@ class Stagetimer extends Connector
         return 'https://api.stagetimer.io/v1/';
     }
 
+    public function messages(): Resources\Messages
+    {
+        return new Resources\Messages($this);
+    }
+
     public function rooms(): Resources\Rooms
     {
         return new Resources\Rooms($this);
