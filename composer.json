@@ -29,10 +29,15 @@
     }
   ],
   "minimum-stability": "stable",
-  "scripts": { 
+  "scripts": {
     "test": "vendor/bin/pest",
     "stan": "vendor/bin/phpstan",
-    "cs": "vendor/bin/pint"
+    "cs": "vendor/bin/pint",
+    "ci": [
+      "@test",
+      "@stan",
+      "@cs"
+    ]
   },
   "config": {
     "allow-plugins": {
