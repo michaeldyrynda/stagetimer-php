@@ -19,7 +19,10 @@ pest()->extend(Tests\TestCase::class)->in('Feature');
 Config::preventStrayRequests();
 
 uses()
-    ->beforeEach(fn () => MockClient::destroyGlobal())
+    ->beforeEach(function () {
+        Config::preventStrayRequests();
+        MockClient::destroyGlobal();
+    })
     ->in(__DIR__);
 
 /*
