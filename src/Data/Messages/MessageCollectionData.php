@@ -9,7 +9,7 @@ use Dyrynda\Stagetimer\Data;
 final readonly class MessageCollectionData extends Data
 {
     /**
-     * @param  \Dyrynda\Stagetimer\Data\Messages\MessageData[]  $messages
+     * @param  MessageData[]  $messages
      */
     public function __construct(
         public bool $ok,

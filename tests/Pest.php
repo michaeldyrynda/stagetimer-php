@@ -13,8 +13,9 @@
 
 use Saloon\Config;
 use Saloon\Http\Faking\MockClient;
+use Tests\TestCase;
 
-pest()->extend(Tests\TestCase::class)->in('Feature');
+pest()->extend(TestCase::class)->in('Feature');
 
 Config::preventStrayRequests();
 

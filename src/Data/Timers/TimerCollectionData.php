@@ -9,7 +9,7 @@ use Dyrynda\Stagetimer\Data;
 final readonly class TimerCollectionData extends Data
 {
     /**
-     * @param  \Dyrynda\Stagetimer\Data\Timers\TimerData[]  $timers
+     * @param  TimerData[]  $timers
      */
     public function __construct(
         public bool $ok,

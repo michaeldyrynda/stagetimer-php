@@ -12,7 +12,7 @@ use Dyrynda\Stagetimer\Enums\Type;
 final readonly class TimerData extends Data
 {
     /**
-     * @param  \Dyrynda\Stagetimer\Data\Timers\LabelData[]  $labels
+     * @param  LabelData[]  $labels
      */
     public function __construct(
         public string $id,

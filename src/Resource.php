@@ -15,7 +15,7 @@ abstract class Resource
     ) {}
 
     /**
-     * @throws \Saloon\Exceptions\Request\RequestException
+     * @throws RequestException
      */
     public function send(Request $request): Response
     {
